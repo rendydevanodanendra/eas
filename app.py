@@ -16,7 +16,7 @@ def load_system():
     
     # 1B. Load Database Kunci Jawaban (Dari Excel aslimu)
     # Pastikan file excel ini di-upload ke GitHub dan path-nya benar
-    file_path = './data/dataset_ujian.xlsx' 
+    file_path = 'dataset question & answer skripsi - Raw (2).xlsx' 
     try:
         df_kunci = pd.read_excel(file_path, sheet_name='Kunci Jawaban')
         df_kunci = df_kunci.rename(columns={'jurusan': 'Jurusan', 'Mata Pelajaran': 'Mapel'})
