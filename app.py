@@ -52,7 +52,7 @@ if df_kunci is not None:
     st.write(f"**Pertanyaan:** {data_soal['Pertanyaan']}")
     
     # Kunci Jawaban disembunyikan (Sistem yang tahu)
-    kunci_jawaban_sistem = str(data_soal['Jawaban_kunci']).lower()
+    kunci_jawaban_sistem = str(data_soal['Jawaban']).lower()
     
     st.markdown("---")
     
@@ -86,9 +86,10 @@ if df_kunci is not None:
                 st.success("### ✅ Penilaian Selesai")
                 col1, col2 = st.columns(2)
                 col1.metric("Skor Prediksi AI", f"{prediksi_skor:.2f} / 5.00")
-                
-                # Opsional: Buka contekan kunci jawaban untuk dosen (Toggle)
+
+
                 with st.expander("Lihat Referensi Kunci Jawaban (Mode Dosen)"):
-                    st.write(data_soal['Jawaban_kunci'])
+                    st.write(data_soal['Jawaban'])
+                
 else:
     st.error("Sistem sedang perbaikan, database kunci jawaban tidak ditemukan.")
