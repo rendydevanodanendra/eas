@@ -1,0 +1,10 @@
+# Exclude model weights and results
+results/
+model_indobert_aes_terbaik/
+*.bin
+*.pt
+*.safetensors
+
+# Python junk
+__pycache__/
+.env
