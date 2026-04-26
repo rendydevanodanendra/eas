@@ -5,9 +5,11 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 # Load Model
 @st.cache_resource
 def load_model():
-    # Pastikan modelnya membaca folder hasil training kamu tadi
-    tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-base-p1")
-    model = AutoModelForSequenceClassification.from_pretrained("./model_indobert_aes_terbaik")
+    # Menampilkan pesan loading yang lebih jelas di web
+    with st.spinner("Sedang mendownload model dari Hugging Face (hanya saat pertama kali buka)..."):
+        tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-base-p1")
+        # GANTI teks di bawah ini dengan username_huggingface/nama_model kamu!
+        model = AutoModelForSequenceClassification.from_pretrained("username_hf_kamu/indobert-aes")
     return tokenizer, model
 
 tokenizer, model = load_model()
