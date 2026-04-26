@@ -9,7 +9,7 @@ def load_model():
     with st.spinner("Sedang mendownload model dari Hugging Face (hanya saat pertama kali buka)..."):
         tokenizer = AutoTokenizer.from_pretrained("indobenchmark/indobert-base-p1")
         # GANTI teks di bawah ini dengan username_huggingface/nama_model kamu!
-        model = AutoModelForSequenceClassification.from_pretrained("username_hf_kamu/indobert-aes")
+        model = AutoModelForSequenceClassification.from_pretrained("rendydevanodanendra/indobert-aes")
     return tokenizer, model
 
 tokenizer, model = load_model()
